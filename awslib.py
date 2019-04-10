@@ -139,7 +139,7 @@ def uploadcsv_to_s3():
   month = today.strftime('%m')
   year = today.strftime('%Y')
   outPutname =  'tvg-chargeback-csv-' + year + '-' + month + '.csv'
-  billing_bucket = "tvg-masterbilling"
+  billing_bucket = "tvg-chargeback"
   csvfilename = "./chargeback.csv"
   s3 = boto3.client('s3')
   s3.upload_file(csvfilename,billing_bucket,outPutname)
