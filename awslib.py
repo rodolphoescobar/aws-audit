@@ -132,3 +132,10 @@ def get_accounts_for_org():
       break
 
   return aws_accounts
+
+def uploadcsv_to_s3(aws_id, chargeback_bucket, csvfilename):
+
+  outPutname = "chargeback-teste.csv"
+
+  s3 = boto3.client('s3')
+  s3.upload_file(csvfilename,chargeback_bucket,outPutname)
