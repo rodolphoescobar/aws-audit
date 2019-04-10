@@ -187,7 +187,7 @@ def generate_simple_csv(user_dict, outfile=None, limit=0.0,
     month:    month of the report (gleaned from the billing CSV)
     year:     year of the report (gleaned from the billing CSV)
   """
-  CSV_HEADER = ['year', 'month', 'person', 'spend']
+  CSV_HEADER = ['year', 'month', 'id', 'name', 'spend']
   account_details = list()
   limit = float(limit) or 0.0
   locale.setlocale(locale.LC_ALL, '')
