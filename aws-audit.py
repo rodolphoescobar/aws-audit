@@ -219,7 +219,7 @@ def generate_simple_csv(user_dict, outfile=None, limit=0.0,
 
     with open(outfile, 'a', newline='') as csv_file:
       writer = csv.writer(csv_file, delimiter=',')
-      line = [year, month, acct_name, acct_total_str]
+      line = [year, month, acct_num, acct_name, acct_total_str]
       writer.writerow(line)
 
 def generate_simple_report(user_dict, limit, display_ids, default_currency):
