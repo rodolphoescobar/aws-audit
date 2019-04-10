@@ -133,7 +133,7 @@ def get_accounts_for_org():
 
   return aws_accounts
 
-def uploadcsv_to_s3(csvfilename):
+def uploadcsv_to_s3():
 
   outPutname = "chargeback-teste.csv"
   billing_bucket = "tvg-masterbilling"
