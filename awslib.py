@@ -135,14 +135,8 @@ def get_accounts_for_org():
 
 def uploadcsv_to_s3():
 
-    today = datetime.date.today()
-    month = today.strftime('%m')
-    year = today.strftime('%Y')
-    outPutname =  '-aws-chargeback-csv-' + \
-                        year + '-' + month + '.csv'
-
-  bucket = 'tvg-masterbilling'
+  outPutname = "chargeback-teste.csv"
+  billing_bucket = "tvg-masterbilling"
   csvfilename = "./teste.csv"
-
   s3 = boto3.client('s3')
-  s3.upload_file(csvfilename,bucket,outPutname)
+  s3.upload_file(csvfilename,billing_bucket,outPutname)
