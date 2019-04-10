@@ -137,5 +137,6 @@ def uploadcsv_to_s3(csvfilename):
 
   outPutname = "chargeback-teste.csv"
   billing_bucket = "tvg-masterbilling"
+  csvfilename = "./teste.csv"
   s3 = boto3.client('s3')
   s3.upload_file(csvfilename,billing_bucket,outPutname)

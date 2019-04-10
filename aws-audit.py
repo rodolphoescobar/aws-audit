@@ -221,7 +221,7 @@ def generate_simple_csv(user_dict, outfile=None, limit=0.0,
       writer = csv.writer(csv_file, delimiter=',')
       line = [year, month, acct_num, acct_name, acct_total_str]
       writer.writerow(line)
-      #awslib.uploadcsv_to_s3(csv_file)
+      awslib.uploadcsv_to_s3()
 
 def generate_simple_report(user_dict, limit, display_ids, default_currency):
   """
