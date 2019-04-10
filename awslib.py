@@ -141,7 +141,7 @@ def uploadcsv_to_s3():
     outPutname =  '-aws-chargeback-csv-' + \
                         year + '-' + month + '.csv'
 
-  bucket = "tvg-masterbilling"
+  bucket = 'tvg-masterbilling'
   csvfilename = "./teste.csv"
 
   s3 = boto3.client('s3')
