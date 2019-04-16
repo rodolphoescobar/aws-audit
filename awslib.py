@@ -16,12 +16,13 @@ def get_latest_bill(aws_id, billing_bucket, billing_file_path, save):
   returns:
     csv object of billing data
   """
+  from dateutil.relativedelta import *
   if billing_file_path:
     f = open(billing_file_path, 'r')
     billing_data = f.read()
   else:
-    today = datetime.date.today()
-    month = today.strftime('%m') - 1
+    today = datetime.date.today() - relativedelta(months=1)
+    month = today.strftime('%m')
     year = today.strftime('%Y')
     billing_filename =  aws_id + '-aws-billing-csv-' + \
                         year + '-' + month + '.csv'
