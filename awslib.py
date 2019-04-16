@@ -21,7 +21,7 @@ def get_latest_bill(aws_id, billing_bucket, billing_file_path, save):
     billing_data = f.read()
   else:
     today = datetime.date.today()
-    month = today.strftime('%m')
+    month = today.strftime('%m') - 1
     year = today.strftime('%Y')
     billing_filename =  aws_id + '-aws-billing-csv-' + \
                         year + '-' + month + '.csv'
