@@ -2,6 +2,7 @@ import boto3
 import config
 import csv
 import datetime
+from dateutil.relativedelta import *
 
 def get_latest_bill(aws_id, billing_bucket, billing_file_path, save):
   """
@@ -16,7 +17,7 @@ def get_latest_bill(aws_id, billing_bucket, billing_file_path, save):
   returns:
     csv object of billing data
   """
-  from dateutil.relativedelta import *
+  
   if billing_file_path:
     f = open(billing_file_path, 'r')
     billing_data = f.read()
